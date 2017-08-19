@@ -1,5 +1,7 @@
 package pl.sages.kodolamacz.sterowanie;
 
+import java.util.Optional;
+
 public class Warunkowe {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class Warunkowe {
             // zrób to
             System.out.println("jesteś nieletni");
         }
+
     }
 
 }

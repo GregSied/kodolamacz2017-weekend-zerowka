@@ -13,6 +13,14 @@ public class Zadanie1 {
                     + " znajduje sie " + tablica[i]);
         }
 
+        liczDodatnie(tablica);
+
+        double[] rzeczywiste = {2.5, 15.7, 3.1415, 1.6018, 2.73, 1000.0};
+
+        System.out.println("Srednia wynosi " + kwadratyWiekszych5mniejszych2(rzeczywiste));
+    }
+
+    public static void liczDodatnie(int[] tablica){
         // liczba elementow dodatnich
         int licznikDodatnich = 0;
         for (int i = 0; i < tablica.length; i++) {
@@ -31,21 +39,19 @@ public class Zadanie1 {
             System.out.println("Znaleziono " +
                     licznikDodatnich + " liczby dodatnie");
         }
+    }
 
-        //
-
-        double[] rzeczywiste = {2.5, 15.7, 3.1415, 1.6018, 2.73, 1000.0};
-
+    public static double kwadratyWiekszych5mniejszych2(double[] rzeczywiste){
         double suma = 0;
         int licznik = 0;
         for (int i = 0; i < rzeczywiste.length; i++) {
             double v = rzeczywiste[i];
             if(v > 5 | v < 2){
-                suma = suma + v * v;
+                suma += + v * v;
                 licznik++;
             }
         }
-        System.out.println("Srednia wynosi " + (suma / licznik));
+        return suma / licznik;
     }
 
 }
