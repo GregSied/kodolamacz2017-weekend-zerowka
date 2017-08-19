@@ -27,9 +27,6 @@ public class TypyZmiennych {
         System.out.println("Czy A jest równe 65?");
         System.out.println('A' == 65);
 
-
-
-
     }
 
 }
