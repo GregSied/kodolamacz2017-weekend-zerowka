@@ -45,6 +45,26 @@ public class Article {
         System.out.println(baton);
         System.out.println(Article.counter);
 
+        Order order = new Order(3);
+        order.add(mleko);
+        order.add(maka);
+        order.add(jajka);
+        order.add(baton);
+        System.out.println(order.toString());
+        System.out.println("Łączna wartość zamówienia wynosi "+order.getTotalCost());
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Money getPrice() {
+        return price;
     }
 
     // alt + insert == generate -> toString

@@ -18,6 +18,10 @@ public class Money {
 //                + grosze + " PLN";
 //    }
 
+    public Money add(Money other){
+        return new Money(this.value + other.value);
+    }
+
     public String toString() {
         // warunek ? jesli TRUE : jesli FALSE
         String grosze = String.valueOf(value);
