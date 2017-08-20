@@ -74,11 +74,35 @@ public class Petle {
         }
     }
 
+    public static void breakContinue(){
+        int[] tab = {1,2,4,8,11,-5,4};
+
+        // chcę wypisać wszystkie parzyste PRZED pierwszą ujemną
+        // jeśli parzysta to wypisz, jeśli ujemna to przerwij pętle
+
+        // break - przerywa
+        // continue - przechodzi do następnej iteracji pętli
+        for (int i : tab) {
+            // jeśli ujemna to przerwij
+            if(i < 0){
+                System.out.println("Ujemna - PRZERYWAM");
+                break;
+            }
+            // jeśli nieparzysta to pomijam
+            if(i % 2 != 0){
+                System.out.println("Nieparzysta, przeskakuje dalej");
+                continue;
+            }
+            System.out.println("Parzysta = "+i);
+        }
+    }
+
     public static void main(String[] args) {
         forLoop();
         whileLoop();
         whileLoop2();
         doWhileLoop();
+        breakContinue();
     }
 
 }
