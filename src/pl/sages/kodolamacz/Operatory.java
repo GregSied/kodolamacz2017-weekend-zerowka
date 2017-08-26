@@ -37,6 +37,7 @@ public class Operatory {
         System.out.println( a >= 15);
         System.out.println( a < 15);
         System.out.println( a <= 15);
+        System.out.println( a == 15);
 
         System.out.println( a > 20 || a < 5);
         // (-niesk, 4] , 7 , [21, +niesk)
@@ -61,6 +62,17 @@ public class Operatory {
 
         System.out.println("Leniwy AND");
         System.out.println(false && czasochlonna());
+
+        String ala1 = "Ala";
+        String ala2 = "Ala";
+        String ala3 = new String("Ala");
+
+        System.out.println("Czy ala1 == ala2?");
+        System.out.println(ala1 == ala2);
+        System.out.println("Czy ala1 == ala3?");
+        System.out.println(ala1 == ala3);
+        System.out.println("Czy ala1.equals(ala3)?");
+        System.out.println(ala1.equals(ala3));
 
     }
 
