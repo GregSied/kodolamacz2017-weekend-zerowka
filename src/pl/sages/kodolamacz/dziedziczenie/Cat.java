@@ -14,7 +14,6 @@ public class Cat extends Pet {
     // nadpisywanie metod z klasy nadrzędnej
     @Override
     public void voice() {
-        super.voice();
         System.out.println("Miauuu");
     }
 }

@@ -7,6 +7,7 @@ public abstract class Pet {
     // alt + insert == menu do generowania
     // command + n == na macu
     public Pet(String name) {
+        System.out.println("Tworze zwierzaka");
         this.name = name;
     }
 
@@ -14,9 +15,12 @@ public abstract class Pet {
         return name;
     }
 
-    public void voice(){
-        System.out.println("Domyślna implementacja metody daj głos");
+    public abstract void voice();
+
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "name='" + name + '\'' +
+                '}';
     }
-
-
 }
