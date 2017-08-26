@@ -22,6 +22,10 @@ public class Money {
         return new Money(this.value + other.value);
     }
 
+    public Money discount(int discount){
+        return new Money(value * (100 - discount) / 100);
+    }
+
     public String toString() {
         // warunek ? jesli TRUE : jesli FALSE
         String grosze = String.valueOf(value);

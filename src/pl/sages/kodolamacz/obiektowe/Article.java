@@ -26,6 +26,37 @@ public class Article {
         this.price = price;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Money getPrice() {
+        return price;
+    }
+
+    public void setName(String name) {
+        printChange("nazwa");
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        printChange("opis");
+        this.description = description;
+    }
+
+    public void setPrice(Money price) {
+        printChange("cena");
+        this.price = price;
+    }
+
+    private void printChange(String field){
+        System.out.println("Zmieniono wartość pola "+field);
+    }
+
     // psvm
     public static void main(String[] args) {
 
@@ -38,6 +69,7 @@ public class Article {
         Article jajka = new Article("Jajka", 349);
         Article baton = new Article("Jowisz", 105);
         Article jowisz = baton;
+        baton.setDescription("Pyszny baton");
 
         System.out.println(mleko);
         System.out.println(maka);
@@ -46,26 +78,22 @@ public class Article {
         System.out.println(Article.counter);
 
         Order order = new Order(3);
+        addArticlesAndPrint(mleko, maka, jajka, baton, order);
+
+        Order order2 = new Order(3, ClientType.SUPERVIP);
+        addArticlesAndPrint(mleko, maka, jajka, baton, order2);
+
+    }
+
+    private static void addArticlesAndPrint(Article mleko, Article maka, Article jajka, Article baton, Order order) {
         order.add(mleko);
         order.add(maka);
         order.add(jajka);
         order.add(baton);
         System.out.println(order.toString());
         System.out.println("Łączna wartość zamówienia wynosi "+order.getTotalCost());
-
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public Money getPrice() {
-        return price;
-    }
 
     // alt + insert == generate -> toString
     @Override

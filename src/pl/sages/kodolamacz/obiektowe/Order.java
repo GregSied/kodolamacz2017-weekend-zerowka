@@ -9,7 +9,12 @@ public class Order {
     private ClientType clientType;
 
     public Order(int size) {
+        this(size, ClientType.REGULAR);
+    }
+
+    public Order(int size, ClientType clientType) {
         articles = new Article[size];
+        this.clientType = clientType;
     }
 
     public void add(Article article){
@@ -26,7 +31,7 @@ public class Order {
         for (Article article : articles) {
             sum = sum.add(article.getPrice());
         }
-        return sum;
+        return sum.discount(clientType.getDiscount());
     }
 
     @Override
