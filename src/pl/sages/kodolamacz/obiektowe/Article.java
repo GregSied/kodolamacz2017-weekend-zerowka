@@ -2,10 +2,12 @@ package pl.sages.kodolamacz.obiektowe;
 
 public class Article {
 
+    static final int MAX_COUNTER = 100;
+
     static int counter = 0;
 
     private int id;
-    private String name;
+    private final String name;
     private String description;
     private Money price;
 
@@ -19,6 +21,9 @@ public class Article {
     }
 
     public Article(String name, String description, Money price) {
+        if(counter > MAX_COUNTER){
+            System.out.println("ZA DUŻO PRODUKTÓW!");
+        }
         counter++;
         this.id = counter;
         this.name = name;
@@ -38,10 +43,12 @@ public class Article {
         return price;
     }
 
-    public void setName(String name) {
-        printChange("nazwa");
-        this.name = name;
-    }
+    // ten setter nie działa, bo nazwa jest finalna
+    //  nie możemy jej zmienić
+//    public void setName(String name) {
+//        printChange("nazwa");
+//        this.name = name;
+//    }
 
     public void setDescription(String description) {
         printChange("opis");
