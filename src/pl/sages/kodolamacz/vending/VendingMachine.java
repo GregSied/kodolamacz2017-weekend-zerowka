@@ -3,7 +3,8 @@ package pl.sages.kodolamacz.vending;
 public class VendingMachine {
 
     private Shelf[] shelves;
-    private CoinDispenser dispenser;
+    private CoinDispenser dispenser = new CoinDispenser();
+    private String display = "";
 
     public VendingMachine(int shelfCounter) {
         this.shelves = new Shelf[shelfCounter];
@@ -24,5 +25,21 @@ public class VendingMachine {
 
     public void setShelf(int shelfNumber, Shelf shelf){
         shelves[shelfNumber] = shelf;
+    }
+
+    public String getDisplay(){
+        return display;
+    }
+
+    public void select(int i){
+
+    }
+
+    public void cancel(){
+
+    }
+
+    public void insertCoin(Coin coin){
+        dispenser.insert(coin);
     }
 }
